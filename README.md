@@ -1,6 +1,6 @@
 # AgentChat Smart Contract
 
-This project implements a smart contract for managing chat interactions with an AI agent on the BSC blockchain. The contract allows users to purchase chat limits
+This project implements a smart contract for managing chat interactions with an AI agent on the BSC blockchain. The contract allows users to purchase chat limits.
 
 ## Contract Features
 
@@ -17,10 +17,9 @@ This project implements a smart contract for managing chat interactions with an 
 - Manage individual user limits
 - Batch update user limits
 
-
 ## Contract Parameters
 
-- `agent`: The address that receive funds when user buy limit
+- `agent`: The address that receives funds when users buy limits
 - `owner`: The contract administrator address
 - `pending_owner`: Address waiting to accept ownership transfer
 - `ownership_transfer_timestamp`: Timestamp when ownership transfer was initiated
@@ -28,7 +27,6 @@ This project implements a smart contract for managing chat interactions with an 
 - `buy_limit_price`: Price in BNB for purchasing chat limits (default: 1 wei)
 - `buy_limit`: Number of chat interactions granted per purchase (default: 100)
 - `user_chat_limit`: Mapping of user addresses to their remaining chat limits
-- `totalFunds`: Total amount of funds accumulated in the contract
 
 ## Security Features
 
@@ -56,7 +54,6 @@ This project implements a smart contract for managing chat interactions with an 
    - Optionally cancel transfer with `cancel_ownership_transfer()`
 5. Check remaining timelock period with `get_remaining_timelock()`
 
-
 ## Events
 
 The contract emits the following events for tracking:
@@ -67,7 +64,6 @@ The contract emits the following events for tracking:
 - `SetBuyLimit`: When the global limit is updated
 - `SetUserLimit`: When a user's limit is updated
 - `BatchSetUserLimit`: When multiple users' limits are updated
-
 
 ## Deployment
 

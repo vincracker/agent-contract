@@ -34,7 +34,6 @@ contract AgentChat {
     event SetBuyLimit(uint256 old_limit, uint256 new_limit);
     event SetUserLimit(address indexed user, uint256 limit);
     event BatchSetUserLimit(address[] users, uint256[] limits);
-    event WithdrawFunds(uint256 amount);
 
     modifier is_owner() {
         require(msg.sender == owner, "You aren't the owner");
