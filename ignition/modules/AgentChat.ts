@@ -3,16 +3,15 @@
 
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
-const AGENT_ADDRESS = "0x0000000000000000000000000000000000000000";
-// const LIMIT_PRICE = 1e14;
-// const LIMIT = 100;
+export default buildModule("AgentChat", (m) => {
+    // Get the agent address from environment variable
+    const agentAddress = process.env.AGENT_ADDRESS;
+    if (!agentAddress) {
+        throw new Error("AGENT_ADDRESS environment variable is not set");
+    }
 
-const AgentChatModule = buildModule("AgentChatModule", (m) => {
-    const agentAddress = m.getParameter("agentAddress", AGENT_ADDRESS);
-
+    // Deploy the AgentChat contract
     const agentChat = m.contract("AgentChat", [agentAddress]);
 
     return { agentChat };
 });
-
-export default AgentChatModule;
